@@ -7,7 +7,7 @@ const Home = () => {
   const [searchText, setSearchText] = useState("");
   const [searchedResults, setSearchedResults] = useState(null);
   const [searchTimeout, setSearchTimeout] = useState(null);
-  const API_BASE = "http://localhost:8080"; //https://generative-ai-service.onrender.com
+  const API_BASE = "https://generative-ai-service.onrender.com"; //https://generative-ai-service.onrender.com
   const RenderCards = ({ data, title }) => {
     if (data?.length > 0) {
       return data.map((post) => {

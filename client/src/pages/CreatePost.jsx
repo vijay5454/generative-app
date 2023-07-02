@@ -11,7 +11,7 @@ const CreatePost = () => {
     prompt: "",
     photo: "",
   });
-  const API_BASE = "http://localhost:8080"; //https://generative-ai-service.onrender.com
+  const API_BASE = "https://generative-ai-service.onrender.com"; //https://generative-ai-service.onrender.com
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
   const handleChange = (e) =>
