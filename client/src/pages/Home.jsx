@@ -7,6 +7,7 @@ const Home = () => {
   const [searchText, setSearchText] = useState("");
   const [searchedResults, setSearchedResults] = useState(null);
   const [searchTimeout, setSearchTimeout] = useState(null);
+  const API_BASE = "http://localhost:8080"; //https://generative-ai-service.onrender.com
   const RenderCards = ({ data, title }) => {
     if (data?.length > 0) {
       return data.map((post) => {
@@ -37,15 +38,12 @@ const Home = () => {
   const fetchPosts = async () => {
     setLoading(true);
     try {
-      const response = await fetch(
-        "https://generative-ai-service.onrender.com/api/v1/post",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`${API_BASE}/api/v1/post`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       if (response.ok) {
         const result = await response.json();
         setAllPosts(result.data.reverse());
